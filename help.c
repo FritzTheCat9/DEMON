@@ -14,8 +14,13 @@ void usage()
     printf("-t \t <demon_sleep_time (in seconds)>\n");
     printf("\t #Important - Make sure if there is no space between -t and <demon_sleep_time>\n");
     printf("\t #Example - Setting demon sleep time to 10 sec: -t10\n");
+    printf("\n");
     printf("-s \t <SIGUSR1 - immediately_demon_wake_up>\n");
+    printf("\t #Important - immediately send SIGUSR1 signal - wake up our demon\n");
+    printf("\t #Important - you can do it also from the terminal with command: kill -SIGUSR1 <process_id>\n");
+    printf("\n");
     printf("-r \t recursive folder synchronisation\n");
+    printf("\n");
     printf("-f \t <maximum file size (in bytes)>\n");
     printf("\t #Important - Files below <maximum file size> are copied by read/write functions\n");
     printf("\t #Important - Files above <maximum file size> are copied by mmap/write functions\n");

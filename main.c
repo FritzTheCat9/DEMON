@@ -20,7 +20,6 @@ int MAX_FILE_SIZE = 1000000;
 void handlerfunction()
 {
     signalSIGUSR1Handler(src, dest, recursive, MAX_FILE_SIZE);
-    exit(0);
 }
 
 int main(int argc, char* argv[])
