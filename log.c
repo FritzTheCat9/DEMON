@@ -69,31 +69,31 @@ int logZapisDoLoguSystemowego(char* message)
 
 void logUspienieDemona()
 {
-    logZapisDoPliku("[DEMON] - Uspienie demona (Naturalne)");
+    logZapisDoPliku("[DEMON] \t- Uspienie demona (Naturalne)");
 	logZapisDoLoguSystemowego("[DEMON] - Uspienie demona (Naturalne)");
 }
 
 void logObudzenieDemona()
 {
-	logZapisDoPliku("[DEMON] - Obudzenie demona (Naturalne)");
+	logZapisDoPliku("[DEMON] \t- Obudzenie demona (Naturalne)");
 	logZapisDoLoguSystemowego("[DEMON] - Obudzenie demona (Naturalne)");
 }
 
 void logUspienieDemonaSygnal()
 {
-    logZapisDoPliku("[DEMON] - Uspienie demona (Sygnal)");
+    logZapisDoPliku("[DEMON] \t- Uspienie demona (Sygnal)");
 	logZapisDoLoguSystemowego("[DEMON] - Uspienie demona (Sygnal)");
 }
 
 void logObudzenieDemonaSygnal()
 {
-	logZapisDoPliku("[DEMON] - Obudzenie demona (Sygnal)");
+	logZapisDoPliku("[DEMON] \t- Obudzenie demona (Sygnal)");
 	logZapisDoLoguSystemowego("[DEMON] - Obudzenie demona (Sygnal)");
 }
 
 void logKopiaPliku(char* path)
 {
-	char info[22] = "[PLIK] - Kopia pliku ";
+	char info[23] = "[PLIK] \t- Kopia pliku ";
 
 	int info_len = strlen(info);
 	int path_len = strlen(path);
@@ -110,7 +110,7 @@ void logKopiaPliku(char* path)
 
 void logModyfikacjaPliku(char* path)
 {
-	char info[28] = "[PLIK] - Modyfikacja pliku ";
+	char info[29] = "[PLIK] \t- Modyfikacja pliku ";
 
 	int info_len = strlen(info);
 	int path_len = strlen(path);
@@ -127,7 +127,7 @@ void logModyfikacjaPliku(char* path)
 
 void logUsunieciePliku(char* path)
 {
-	char info[26] = "[PLIK] - Usuniecie pliku ";
+	char info[27] = "[PLIK] \t- Usuniecie pliku ";
 
 	int info_len = strlen(info);
 	int path_len = strlen(path);
@@ -144,7 +144,7 @@ void logUsunieciePliku(char* path)
 
 void logKopiaPlikuMMAP(char* path)
 {
-	char info[29] = "[PLIK] - Kopia pliku (MMAP) ";
+	char info[30] = "[PLIK] \t- Kopia pliku (MMAP) ";
 
 	int info_len = strlen(info);
 	int path_len = strlen(path);
@@ -161,7 +161,7 @@ void logKopiaPlikuMMAP(char* path)
 
 void logModyfikacjaPlikuMMAP(char* path)
 {
-	char info[35] = "[PLIK] - Modyfikacja pliku (MMAP) ";
+	char info[36] = "[PLIK] \t- Modyfikacja pliku (MMAP) ";
 
 	int info_len = strlen(info);
 	int path_len = strlen(path);
@@ -178,7 +178,7 @@ void logModyfikacjaPlikuMMAP(char* path)
 
 void logKopiaKatalogu(char* path)
 {
-	char info[28] = "[KATALOG] - Kopia katalogu ";
+	char info[29] = "[KATALOG] - Kopia katalogu ";
 
 	int info_len = strlen(info);
 	int path_len = strlen(path);
@@ -195,7 +195,7 @@ void logKopiaKatalogu(char* path)
 
 void logUsuniecieKatalogu(char* path)
 {
-	char info[32] = "[KATALOG] - Usuniecie katalogu ";
+	char info[33] = "[KATALOG] - Usuniecie katalogu ";
 
 	int info_len = strlen(info);
 	int path_len = strlen(path);
