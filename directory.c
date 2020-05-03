@@ -1,3 +1,9 @@
+/*
+Kierunek studiów i numer grupy ps: Informatyka, PS2
+Skład grupy: Bartłomiej Umiński, Dominik Borowski, Michał Wysocki
+Wybrany temat projektu: Temat 2 - Demon synchronizujący dwa podkatalogi
+*/
+
 #include "directory.h"
 
 #include <stdio.h>

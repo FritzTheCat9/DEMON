@@ -1,3 +1,9 @@
+/*
+Kierunek studiów i numer grupy ps: Informatyka, PS2
+Skład grupy: Bartłomiej Umiński, Dominik Borowski, Michał Wysocki
+Wybrany temat projektu: Temat 2 - Demon synchronizujący dwa podkatalogi
+*/
+
 #include "file.h"
 #include "log.h"
 
@@ -96,7 +102,7 @@ int areHavingEqualModificationDate(char* source, char* destination)
         return 0;
     }
 
-    if(stat_source.st_mtime == stat_destination.st_mtime)   // czy pliki maja taka sama date modyfikacji
+    if(stat_source.st_mtime == stat_destination.st_mtime)   // czy pliki maja taką samą datę modyfikacji
     {
         return 1;
     }
@@ -118,7 +124,7 @@ int changeModificationDate(char* pathToChangeDate, char* pathToGetDate)
 
     newTime.actime = stat_pathToGetDate.st_atime;
     newTime.modtime = stat_pathToGetDate.st_mtime;
-    utime(pathToChangeDate, &newTime);
+    utime(pathToChangeDate, &newTime);                          // zmiana daty modyfikacji pliku
 
     struct stat stat_pathToChangeDate;
     return 1;
@@ -195,6 +201,7 @@ int mapFile(char* source_mapp, char* destination_write)
 	write(fPointer2, file_in_memory, size);
 
     munmap(file_in_memory, size);
+
     close(fPointer1);
 	close(fPointer2);
     return 1;

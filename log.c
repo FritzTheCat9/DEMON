@@ -1,3 +1,9 @@
+/*
+Kierunek studiów i numer grupy ps: Informatyka, PS2
+Skład grupy: Bartłomiej Umiński, Dominik Borowski, Michał Wysocki
+Wybrany temat projektu: Temat 2 - Demon synchronizujący dwa podkatalogi
+*/
+
 #include "log.h"
 
 #include <stdio.h>
@@ -12,7 +18,7 @@
 
 char* getLocatDateTime()
 {
-	time_t t = time(NULL);
+	time_t t = time(NULL);								// pobranie daty i godziny
 	struct tm tm = *localtime(&t);
 
 	char* year = malloc( sizeof(char) * ( 4 + 1 ) );
@@ -31,7 +37,7 @@ char* getLocatDateTime()
 	int date_len = strlen(year) + strlen(month) + strlen(day) + strlen(hour) + strlen(min) + strlen(sec) + 6;
 
 	char* date = malloc( sizeof(char) * ( date_len ) );
-	snprintf(date, date_len, "%s-%s-%s %s:%s:%s", year, month, day, hour, min, sec);
+	snprintf(date, date_len, "%s-%s-%s %s:%s:%s", year, month, day, hour, min, sec);			// odpowiednie zapisanie daty
 
 	free(year); free(month); free(day); free(hour); free(min); free(sec);
 
@@ -69,31 +75,31 @@ int logZapisDoLoguSystemowego(char* message)
 
 void logUspienieDemona()
 {
-    logZapisDoPliku("[DEMON] \t- Uspienie demona (Naturalne)");
+    logZapisDoPliku("[DEMON] - Uspienie demona (Naturalne)");
 	logZapisDoLoguSystemowego("[DEMON] - Uspienie demona (Naturalne)");
 }
 
 void logObudzenieDemona()
 {
-	logZapisDoPliku("[DEMON] \t- Obudzenie demona (Naturalne)");
+	logZapisDoPliku("[DEMON] - Obudzenie demona (Naturalne)");
 	logZapisDoLoguSystemowego("[DEMON] - Obudzenie demona (Naturalne)");
 }
 
 void logUspienieDemonaSygnal()
 {
-    logZapisDoPliku("[DEMON] \t- Uspienie demona (Sygnal)");
+    logZapisDoPliku("[DEMON] - Uspienie demona (Sygnal)");
 	logZapisDoLoguSystemowego("[DEMON] - Uspienie demona (Sygnal)");
 }
 
 void logObudzenieDemonaSygnal()
 {
-	logZapisDoPliku("[DEMON] \t- Obudzenie demona (Sygnal)");
+	logZapisDoPliku("[DEMON] - Obudzenie demona (Sygnal)");
 	logZapisDoLoguSystemowego("[DEMON] - Obudzenie demona (Sygnal)");
 }
 
 void logKopiaPliku(char* path)
 {
-	char info[23] = "[PLIK] \t- Kopia pliku ";
+	char info[22] = "[PLIK] - Kopia pliku ";
 
 	int info_len = strlen(info);
 	int path_len = strlen(path);
@@ -110,7 +116,7 @@ void logKopiaPliku(char* path)
 
 void logModyfikacjaPliku(char* path)
 {
-	char info[29] = "[PLIK] \t- Modyfikacja pliku ";
+	char info[28] = "[PLIK] - Modyfikacja pliku ";
 
 	int info_len = strlen(info);
 	int path_len = strlen(path);
@@ -127,7 +133,7 @@ void logModyfikacjaPliku(char* path)
 
 void logUsunieciePliku(char* path)
 {
-	char info[27] = "[PLIK] \t- Usuniecie pliku ";
+	char info[26] = "[PLIK] - Usuniecie pliku ";
 
 	int info_len = strlen(info);
 	int path_len = strlen(path);
@@ -144,7 +150,7 @@ void logUsunieciePliku(char* path)
 
 void logKopiaPlikuMMAP(char* path)
 {
-	char info[30] = "[PLIK] \t- Kopia pliku (MMAP) ";
+	char info[29] = "[PLIK] - Kopia pliku (MMAP) ";
 
 	int info_len = strlen(info);
 	int path_len = strlen(path);
@@ -161,7 +167,7 @@ void logKopiaPlikuMMAP(char* path)
 
 void logModyfikacjaPlikuMMAP(char* path)
 {
-	char info[36] = "[PLIK] \t- Modyfikacja pliku (MMAP) ";
+	char info[35] = "[PLIK] - Modyfikacja pliku (MMAP) ";
 
 	int info_len = strlen(info);
 	int path_len = strlen(path);
